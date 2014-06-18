@@ -142,10 +142,6 @@ $ ak47 pkg
 version:(1.0.0.0) 1.1.0.0
 environ:(dev) rc
 
-# signed www/css/base.css
-# signed Manifest.xml
-# signed www/index.htm
-# signed www/js/aliBridge.js
 # archiving...
 # packed at /Users/haibinzhb/Project/alipayProject/h5app-demo/package/20000127-1.1.0.0_rc.amr
 
@@ -154,7 +150,7 @@ environ:(dev) rc
 ### 后续计划
 
 1. 自动压缩js和css文件
-2. 优化加签验签逻辑，不再强绑定为支付宝H5App签名功能，实现一个包可以同时用于其他无线端产品线
+2. 优化加签验签逻辑，不再强绑定为支付宝H5App签名功能，实现一个包可以同时用于其他阿里集团无线端产品线
 
 
 ## 其他功能功能开发中
