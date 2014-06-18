@@ -1,6 +1,6 @@
 {
     "name": "ak47",
-    "version": "1.4.0",
+    "version": "1.4.1",
     "description": "alipay mobile H5App developer kits",
     "dependencies": {
         "connect": "~2.8.4",
