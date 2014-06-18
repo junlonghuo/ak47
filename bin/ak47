@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+
+var fs = require('fs-extra'),
+    path = require('path'),
+    argv = require('optimist').argv;
+
+var mainDir=path.resolve(__dirname, '../main.js');
+
+require(mainDir).invoke();
+

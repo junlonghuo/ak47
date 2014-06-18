@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package>
+    <!--业务包appId -->
+    <uid></uid>
+
+    <!--业务包名称 -->
+    <name>H5App</name>
+
+    <!--业务包版本 -->
+    <version>1.0.0.0</version>
+
+    <!--业务包介绍 -->
+    <descriptor>H5App</descriptor>
+
+    <!--起始url -->
+    <url>/www/index.htm</url>
+
+    <!-- 可选启动参数 -->
+    <launchOptions>
+
+        <!--应用图标路径 -->
+        <iconUrl>/res</iconUrl>
+
+        <!--业务包运行要求的最小OS版本 -->
+        <uses-sdk minSupportOsVersion="0"/>
+
+        <!--业务包运行要求的最小sdk版本 -->
+        <uses-sdk minSupportSdkVersion="0"/>
+
+        <!--业务包运行要求的最小app版本 -->
+        <uses-sdk minSupportAppVersion="0"/>
+
+        <!--业务包运行要求的最小钱包客户端版本 -->
+        <uses-sdk minSupportClientVersion="0"/>
+
+        <!--默认标题, 在页面第一次加载之前显示在标题栏上-->
+        <defaultTitle></defaultTitle>
+
+        <!--YES/NO, 是否读取网页标题显示在titleBar上-->
+        <readTitle>YES</readTitle>
+
+        <!--YES/NO, 是否显示顶部标题栏-->
+        <showTitleBar>NO</showTitleBar>
+
+        <!--YES/NO, 是否显示底部工具条-->
+        <showToolBar>YES</showToolBar>
+
+        <!--YES/NO, 是否在页面加载前显示全局菊花-->
+        <showLoading>NO</showLoading>
+
+        <!--back/pop/auto. 指定后退按钮行为-->
+        <backBehavior>auto</backBehavior>
+
+        <!--YES / NO.是否支持下拉刷新-->
+        <pullRefresh>NO</pullRefresh>
+
+        <!--更多的菜单项列表-->
+        <toolbarMenu></toolbarMenu>
+
+        <!--YES/NO，拦截wap支付链接后，当用户选择取消支付的时候，是否停留在当前页面-->
+        <closeAfterPayFinish>YES</closeAfterPayFinish>
+
+        <!--用于拦截wap收银台请求时构造bizcontext时追加的内容-->
+        <safePayContext></safePayContext>
+
+    </launchOptions>
+
+</package>
