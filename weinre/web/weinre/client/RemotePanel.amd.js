@@ -67,8 +67,13 @@ module.exports = RemotePanel = (function(_super) {
     this.serverProperties = DT.DIV({
       $className: "weinreServerProperties"
     });
-    div.appendChild(DT.H1("Server Properties"));
-    div.appendChild(this.serverProperties);
+//    div.appendChild(DT.H1("Server Properties"));
+//    div.appendChild(this.serverProperties);
+    this.serverQrcode = DT.DIV({
+      $className: "weinreQrcode"
+    });
+    div.appendChild(DT.H1('QR code'));
+    div.appendChild(this.serverQrcode);
     this.element.appendChild(div);
     return this.reset();
   };
@@ -166,30 +171,43 @@ module.exports = RemotePanel = (function(_super) {
     return RemotePanel.__super__.hide.call(this);
   };
 
+  RemotePanel.prototype.setQrcode = function(properties) {
+      var host=location.protocol+'//'+location.hostname+':'+properties.p+'/';
+      var qrservice=host+'qrcode?';
+      var table='<table style="width:100%">';
+      table+='<tr><td><label>'+host+'</label><input type="text" value="index.htm"/><button>确定</button></td></tr>';
+      table+='<tr><td>'+'自带浏览器启动'+'</td><td>'+'支付宝钱包启动'+'</td></tr>';
+      table+='<tr><td>'+'<img src="" alt="qrcode1"/>'+'</td><td>'+'<img src="" alt="qrcode2"/>'+'</td></tr>';
+      table+='</table>';
+      return this.serverQrcode.innerHTML=table;
+  };
+
   RemotePanel.prototype.setServerProperties = function(properties) {
-    var aVal, finalVal, key, keys, table, val, _i, _j, _len, _len1;
-    table = "<table>";
-    keys = [];
-    for (key in properties) {
-      keys.push(key);
-    }
-    keys = keys.sort();
-    for (_i = 0, _len = keys.length; _i < _len; _i++) {
-      key = keys[_i];
-      val = properties[key];
-      if (typeof val === "string") {
-        val = val.escapeHTML();
-      } else {
-        finalVal = "";
-        for (_j = 0, _len1 = val.length; _j < _len1; _j++) {
-          aVal = val[_j];
-          finalVal += "<li>" + aVal.escapeHTML();
-        }
-        val = "<ul>" + finalVal + "</ul>";
-      }
-      table += ("<tr class='weinre-normal-text-size'><td valign='top'>" + (key.escapeHTML()) + ": <td>") + val;
-    }
-    table += "</table>";
+    this.setQrcode(properties);
+    var table='';
+//    var aVal, finalVal, key, keys, table, val, _i, _j, _len, _len1;
+//    table = "<table>";
+//    keys = [];
+//    for (key in properties) {
+//      keys.push(key);
+//    }
+//    keys = keys.sort();
+//    for (_i = 0, _len = keys.length; _i < _len; _i++) {
+//      key = keys[_i];
+//      val = properties[key];
+//      if (typeof val === "string") {
+//        val = val.escapeHTML();
+//      } else {
+//        finalVal = "";
+//        for (_j = 0, _len1 = val.length; _j < _len1; _j++) {
+//          aVal = val[_j];
+//          finalVal += "<li>" + aVal.escapeHTML();
+//        }
+//        val = "<ul>" + finalVal + "</ul>";
+//      }
+//      table += ("<tr class='weinre-normal-text-size'><td valign='top'>" + (key.escapeHTML()) + ": <td>") + val;
+//    }
+//    table += "</table>";
     return this.serverProperties.innerHTML = table;
   };
 

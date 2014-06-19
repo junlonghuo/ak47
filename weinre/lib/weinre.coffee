@@ -52,6 +52,7 @@ run2 = ->
 #-------------------------------------------------------------------------------
 processOptions = (options, cb) ->
     options.httpPort     = utils.ensureInteger( options.httpPort,     'the value of the option httpPort is not a number')
+    options.p            = utils.ensureInteger( options.p,            'the value of the option p is not a number')
     options.boundHost    = utils.ensureString(  options.boundHost,    'the value of the option boundHost is not a string')
     options.verbose      = utils.ensureBoolean( options.verbose,      'the value of the option verbose is not a boolean')
     options.debug        = utils.ensureBoolean( options.debug,        'the value of the option debug is not a boolean')
@@ -75,6 +76,7 @@ processOptions = (options, cb) ->
     
     utils.logVerbose "options:"
     utils.logVerbose "   httpPort:     #{options.httpPort}"
+    utils.logVerbose "   p:            #{options.p}"
     utils.logVerbose "   boundHost:    #{options.boundHost}"
     utils.logVerbose "   verbose:      #{options.verbose}"
     utils.logVerbose "   debug:        #{options.debug}"

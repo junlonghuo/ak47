@@ -28,6 +28,7 @@ weinre = require './weinre'
 
 optionDefaults =
     httpPort:     3119
+    p:            3000
     boundHost:    '-all-'
     verbose:      false
     debug:        false
@@ -38,6 +39,7 @@ exports.run = ->
 
     knownOpts =
         httpPort:     Number
+        p:            Number
         boundHost:    String
         verbose:      Boolean
         debug:        Boolean
