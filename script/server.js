@@ -67,8 +67,8 @@ exports.run = function (isDebug) {
         var ip = ips.pop();
         var host = 'http://' + ip + ':' + port + '/';
         isDebug === true && console.log('# debugPath(远程调试控制台地址) = '.yellow + (host + 'debug').green.underline);
-        console.log('# webServer(web页面预览地址) = '.yellow + (host + option.indexName).green.underline);
-        console.log('# qrScheme(支付宝钱包启动拍码地址) = '.yellow + (host + 'qr').green.underline);
+        console.log('# webServer(web页面预览起始页) = '.yellow + (host + option.indexName).green.underline);
+        console.log('# qrScheme(二维码服务) = '.yellow + (host + 'qr').green.underline);
         isDebug === true && console.log(('# debugScript(非本地页面需手动插入脚本) = <script src="' + debugPath + '/target/target-script-min.js#anonymous"></script>').grey);
     }
 
