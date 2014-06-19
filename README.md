@@ -1,13 +1,9 @@
 ## 安装
 
-由于ak47的打包功能包含签名认证，因此暂不允许直接使用npm源来安装，必须先通过gitlab clone源码到本地后手动安装
-
 目前在npm@1.3.11版本通过测试，其他npm可能会出现兼容性问题
 
 ```
-$ git clone git@gitlab.alibaba-inc.com:h5app/h5app-dev-tools.git
-$ cd h5app-dev-tools
-$ npm install -g
+$ npm install ak47 -g
 ```
 
 有时候会由于GFW的原因导致报错`npm ERR! registry error parsing json`，这时候请先使用
