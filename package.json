@@ -1,6 +1,6 @@
 {
     "name": "ak47",
-    "version": "1.5.2",
+    "version": "1.5.3",
     "description": "alipay mobile H5App developer kits",
     "dependencies": {
         "connect": "~2.8.4",
@@ -21,7 +21,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git@gitlab.alibaba-inc.com:h5app/h5app-dev-tools.git"
+        "url": "git@github.com:bolide74/ak47.git"
     },
     "main": "main.js",
     "bin": {
