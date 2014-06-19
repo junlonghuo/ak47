@@ -1,8 +1,13 @@
 ## 安装
 
+由于ak47的打包功能包含签名认证，因此暂不允许直接使用npm源来安装，必须先通过gitlab clone源码到本地后手动安装
+
 目前在npm@1.3.11版本通过测试，其他npm可能会出现兼容性问题
+
 ```
-$ npm install ak47 -g
+$ git clone git@gitlab.alibaba-inc.com:h5app/h5app-dev-tools.git
+$ cd h5app-dev-tools
+$ npm install -g
 ```
 
 有时候会由于GFW的原因导致报错`npm ERR! registry error parsing json`，这时候请先使用
@@ -58,7 +63,7 @@ $ ak47 server --p 3001
 
 # project = /Users/haibinzhb/Project/alipayProject/h5app-demo
 # webServer(web页面预览地址) = http://10.15.133.180:3001/
-# qrScheme(支付宝钱包启动拍码地址) = http://10.15.133.180:3001/qr
+# qrScheme(二维码服务) = http://10.15.133.180:3001/qr
 # listening... do not exit!
 ````
 执行后将打印出三个结果:
@@ -67,8 +72,10 @@ $ ak47 server --p 3001
 
 2. `webServer`为本地web服务器地址。
 
-3. `qrScheme`为二维码拍码地址，PC端打开后用手机扫一扫出现的二维码，打开后将自动以scheme方式启动支付宝钱包H5容器。
+3. `qrScheme`为二维码拍码地址，PC端打开后出现两个二维码，分别可以在移动端拍码后用原生浏览器或支付宝钱包打开。
+
 默认启动页为自动获取自Manifest.xml文件内的url值，一般为index.htm。同时还会获取showTitleBar和showToolBar的值作为启动参数。
+
 
 
 
@@ -91,7 +98,7 @@ $ ak47 debug --p 3001
 
 # debugPath(远程调试控制台地址) = http://10.15.133.180:3001/debug
 # webServer(web页面预览地址) = http://10.15.133.180:3001/
-# qrScheme(支付宝钱包启动拍码地址) = http://10.15.133.180:3001/qr
+# qrScheme(二维码服务) = http://10.15.133.180:3001/qr
 # debugScript(非本地页面需手动插入脚本) = <script src="http://10.15.134.119:3119/target/target-script-min.js#anonymous"></script>
 
 # listening... do not exit!
@@ -103,10 +110,11 @@ $ ak47 debug --p 3001
 **如果是需要调试在线网站(即非本地服务器网址)的页面，需要手动在被调试页面源码内加入debugScript的内容(即一个script标签)**
 
 1. PC端浏览器打开`debugPath`地址
-2. 然后在手机端浏览器打开`webServer`地址
-3. 也可在PC端打开`qrScheme`地址后，用手机扫一扫出现的二维码，打开后将自动以scheme方式启动支付宝钱包H5容器。
+2. debugPath地址会出现两个二维码，分别可以在移动端拍码后用原生浏览器或支付宝钱包打开。
+
 默认启动页为自动获取自Manifest.xml文件内的url值，一般为index.htm。同时还会获取showTitleBar和showToolBar的值作为启动参数。
 
+qrScheme地址为专门的扫码地址
 
 weinre的调试界面完全类似chrome的调试台
 
@@ -145,7 +153,7 @@ environ:(dev) rc
 ### 后续计划
 
 1. 自动压缩js和css文件
-2. 优化加签验签逻辑，不再强绑定为支付宝H5App签名功能，实现一个包可以同时用于其他阿里集团无线端产品线
+2. 优化加签验签逻辑，不再强绑定为支付宝H5App签名功能，实现一个包可以同时用于其他无线端产品线
 
 
 ## 其他功能功能开发中
