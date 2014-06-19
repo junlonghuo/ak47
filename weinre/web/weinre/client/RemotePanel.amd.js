@@ -172,14 +172,9 @@ module.exports = RemotePanel = (function(_super) {
   };
 
   RemotePanel.prototype.setQrcode = function(properties) {
-      var host=location.protocol+'//'+location.hostname+':'+properties.p+'/';
-      var qrservice=host+'qrcode?';
-      var table='<table style="width:100%">';
-      table+='<tr><td><label>'+host+'</label><input type="text" value="index.htm"/><button>确定</button></td></tr>';
-      table+='<tr><td>'+'自带浏览器启动'+'</td><td>'+'支付宝钱包启动'+'</td></tr>';
-      table+='<tr><td>'+'<img src="" alt="qrcode1"/>'+'</td><td>'+'<img src="" alt="qrcode2"/>'+'</td></tr>';
-      table+='</table>';
-      return this.serverQrcode.innerHTML=table;
+      var host=location.protocol+'//'+location.hostname+':'+properties.p+'/qr';
+      var html='<iframe src="' + host + '" style="width:100%;height:350px;"></iframe>';
+      return this.serverQrcode.innerHTML=html;
   };
 
   RemotePanel.prototype.setServerProperties = function(properties) {
